@@ -1,0 +1,211 @@
+# ============================================================
+# N1 智能分流配置 v3（双池+ermao测活层 · 按类型/设备分组）
+# 分层思路（magpie 式）：
+#   接入层：ermao(已TCP测活266节点) > big(1982原始) > small(63)
+#   类型层：YouTube/AI/TG 各自独立组，健康检查用真实目标域
+#   设备层：按源 IP 分组，可给每台设备指定专属出口
+#   并发层：load-balance 组给多连接下载任务聚合带宽
+# ============================================================
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: warning
+geodata-mode: false
+geo-auto-update: false
+find-process-mode: strict
+external-controller: 127.0.0.1:9090
+unified-delay: true
+tcp-concurrent: true
+
+proxy-providers:
+  # ---------- 质量层：ermaozi 测活过滤订阅（266 存活节点，上游12h重测） ----------
+  ermao:
+    type: http
+    url: "https://www.ermao.net/sub/reachable/clash/ermao.net"
+    interval: 21600
+    path: ./providers/ermao.yaml
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+      lazy: true
+
+  # ---------- 小池：snakem982 proxypool ----------
+  small:
+    type: http
+    url: "https://gh-proxy.com/https://raw.githubusercontent.com/snakem982/proxypool/main/source/clash-meta-2.yaml"
+    interval: 3600
+    path: ./providers/small.yaml
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+      lazy: false
+
+  # ---------- 大池：Barabama 原始聚合 ----------
+  big:
+    type: http
+    url: "https://gh-proxy.com/https://raw.githubusercontent.com/Barabama/clashmeta/main/clashmeta.yaml"
+    interval: 7200
+    path: ./providers/big.yaml
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+      lazy: true
+
+proxy-groups:
+  # ===== 接入层（主备链） =====
+  - name: 🟢 免费池优选
+    type: url-test
+    use: [ermao]
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 80
+
+  - name: ⚡ 小池优选
+    type: url-test
+    use: [small]
+    url: http://www.gstatic.com/generate_204
+    interval: 120
+    tolerance: 50
+
+  - name: 🐋 大池备用
+    type: url-test
+    use: [big]
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 80
+    lazy: true
+
+  # 自动容错：用真实目标(google 204)做健康检查，第一个不可用自动切下一个
+  - name: 🔁 自动容错
+    type: fallback
+    proxies: [🟢 免费池优选, 🐋 大池备用, ⚡ 小池优选]
+    url: https://www.google.com/generate_204
+    interval: 60
+
+  - name: 🚀 主选
+    type: select
+    proxies: [🔁 自动容错, 🟢 免费池优选, 🐋 大池备用, ⚡ 小池优选]
+    url: http://www.gstatic.com/generate_204
+    interval: 120
+
+  # ===== 类型层（真实目标域健康检查） =====
+  - name: 🎬 YouTube
+    type: url-test
+    use: [big, ermao]
+    url: https://www.youtube.com/generate_204
+    interval: 300
+    tolerance: 100
+    lazy: false
+    filter: (?i)^(?!.*(🇷🇺|🇧🇾|🇷🇴|俄罗斯|RUS)).*$
+
+  - name: 🤖 AI服务
+    type: url-test
+    use: [ermao, big]
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 100
+    lazy: true
+    filter: (?i)^(?!.*(🇷🇺|🇧🇾|🇷🇴|俄罗斯|RUS)).*$
+
+  - name: 📲 Telegram
+    type: url-test
+    use: [ermao, big]
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 100
+    lazy: true
+
+  # ===== 并发层（多连接任务聚合带宽：aria2/下载器走这组） =====
+  - name: ⬇️ 下载并发
+    type: load-balance
+    use: [ermao, big]
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    lazy: true
+
+  # ===== 设备层（源IP分流，面板里可随时切） =====
+  - name: 📱 手机节点
+    type: select
+    proxies: [🚀 主选, 🎬 YouTube, 🤖 AI服务, 📲 Telegram, ⬇️ 下载并发, DIRECT]
+
+  # 电脑接入后把自己的 IP 加到 rules 的 SRC-IP-CIDR（模板见 rules 注释）
+  - name: 💻 电脑节点
+    type: select
+    proxies: [🚀 主选, 🎬 YouTube, 🤖 AI服务, 📲 Telegram, ⬇️ 下载并发, DIRECT]
+
+  # ===== 地区层（按节点名旗帜/关键词预分组，手动点选） =====
+  - name: 🇭🇰 港节点
+    type: select
+    use: [big, ermao]
+    filter: (?i)HK|香港|🇭🇰
+  - name: 🇯🇵 日节点
+    type: select
+    use: [big, ermao]
+    filter: (?i)JP|日本|🇯🇵
+  - name: 🇺🇸 美节点
+    type: select
+    use: [big, ermao]
+    filter: (?i)US|美国|🇺🇸
+  - name: 🇸🇬 狮节点
+    type: select
+    use: [big, ermao]
+    filter: (?i)SG|新加坡|🇸🇬
+  - name: 🇩🇪 德节点
+    type: select
+    use: [big, ermao]
+    filter: (?i)DE|德国|🇩🇪
+
+  # 全量手动（含 ermao）
+  - name: 🔯 手动选择
+    type: select
+    use: [small, big, ermao]
+
+rules:
+  # --- 类型层优先（视频/AI/TG 各走各的池） ---
+  - DOMAIN-SUFFIX,googlevideo.com,🎬 YouTube
+  - DOMAIN-SUFFIX,youtube.com,🎬 YouTube
+  - DOMAIN-SUFFIX,youtu.be,🎬 YouTube
+  - DOMAIN-SUFFIX,ytimg.com,🎬 YouTube
+  - DOMAIN-SUFFIX,youtubei.googleapis.com,🎬 YouTube
+  - DOMAIN-SUFFIX,youtubeeducation.com,🎬 YouTube
+  - DOMAIN-SUFFIX,youtubekids.com,🎬 YouTube
+  - DOMAIN-SUFFIX,ggpht.com,🎬 YouTube
+  - DOMAIN-SUFFIX,youtube-nocookie.com,🎬 YouTube
+  - DOMAIN-SUFFIX,youtubeusercontent.com,🎬 YouTube
+  - DOMAIN-KEYWORD,youtube,🎬 YouTube
+
+  - DOMAIN-SUFFIX,openai.com,🤖 AI服务
+  - DOMAIN-SUFFIX,chatgpt.com,🤖 AI服务
+  - DOMAIN-SUFFIX,ai.com,🤖 AI服务
+  - DOMAIN-SUFFIX,anthropic.com,🤖 AI服务
+  - DOMAIN-SUFFIX,claude.ai,🤖 AI服务
+  - DOMAIN-SUFFIX,gemini.google.com,🤖 AI服务
+  - DOMAIN-SUFFIX,generativelanguage.googleapis.com,🤖 AI服务
+  - DOMAIN-SUFFIX,grok.com,🤖 AI服务
+  - DOMAIN-SUFFIX,x.ai,🤖 AI服务
+  - DOMAIN-SUFFIX,perplexity.ai,🤖 AI服务
+  - DOMAIN-SUFFIX,poe.com,🤖 AI服务
+  - DOMAIN-SUFFIX,deepseek.com,🤖 AI服务
+  - DOMAIN-SUFFIX,groq.com,🤖 AI服务
+
+  - DOMAIN-SUFFIX,telegram.org,📲 Telegram
+  - DOMAIN-SUFFIX,telegram.me,📲 Telegram
+  - DOMAIN-SUFFIX,t.me,📲 Telegram
+  - DOMAIN-SUFFIX,telesco.pe,📲 Telegram
+  - IP-CIDR,91.108.0.0/16,📲 Telegram,no-resolve
+  - IP-CIDR,149.154.160.0/20,📲 Telegram,no-resolve
+  - IP-CIDR,109.239.140.0/24,📲 Telegram,no-resolve
+
+  # --- 国内直连必须在设备分流之前（否则国内流量被代理吃掉） ---
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - GEOIP,CN,DIRECT
+
+  # --- 设备层（源 IP → 专属出口；新设备照抄一行改 IP） ---
+  # 例：电脑 IP 是 192.168.50.100 时取消下一行注释
+  # - SRC-IP-CIDR,192.168.50.100/32,💻 电脑节点
+  - SRC-IP-CIDR,192.168.50.167/32,📱 手机节点
+  - MATCH,🚀 主选

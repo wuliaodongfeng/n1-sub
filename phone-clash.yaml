@@ -750,6 +750,22 @@ proxies:
   udp: true
   sni: docs.microsoft.com
   skip-cert-verify: true
+- name: 🇮🇳 印度 | IND 2
+  server: 147.93.171.8
+  port: 8443
+  type: vless
+  uuid: 591e7de6-f2dd-4ff9-ae21-8e00d5affa2a
+  tls: true
+  alpn:
+  - http/1.1
+  servername: 147-93-171-8.sslip.io
+  client-fingerprint: firefox
+  network: ws
+  ws-opts:
+    path: /vpn-live
+    headers:
+      Host: 147-93-171-8.sslip.io
+  udp: true
 - name: 🇳🇱 荷兰 | NLD 2
   server: 201.34.142.108
   port: 443
@@ -5751,6 +5767,7 @@ proxy-groups:
   - 🇫🇷 法国 | FRA
   - 🇬🇧 英国 | GBR
   - 🇭🇰 香港 | HKG 2
+  - 🇮🇳 印度 | IND 2
   - 🇳🇱 荷兰 | NLD 2
   - 🇹🇼 🇨🇳 台湾 | TWN 2
   - ❓未知丨yoyapai.com (2)
@@ -6397,6 +6414,7 @@ proxy-groups:
   - 🇫🇷 法国 | FRA
   - 🇬🇧 英国 | GBR
   - 🇭🇰 香港 | HKG 2
+  - 🇮🇳 印度 | IND 2
   - 🇳🇱 荷兰 | NLD 2
   - 🇹🇼 🇨🇳 台湾 | TWN 2
   - ❓未知丨yoyapai.com (2)

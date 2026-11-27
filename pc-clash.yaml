@@ -742,22 +742,14 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-- name: 🇮🇳 印度 | IND 2
-  server: 147.93.171.8
-  port: 8443
-  type: vless
-  uuid: 591e7de6-f2dd-4ff9-ae21-8e00d5affa2a
-  tls: true
-  alpn:
-  - http/1.1
-  servername: 147-93-171-8.sslip.io
-  client-fingerprint: firefox
-  network: ws
-  ws-opts:
-    path: /vpn-live
-    headers:
-      Host: 147-93-171-8.sslip.io
+- name: 🇭🇰 香港 | HKG 2
+  server: ibsdsf.df6h451rh.xin
+  port: 443
+  type: anytls
+  password: 2902c46c8493
   udp: true
+  sni: docs.microsoft.com
+  skip-cert-verify: true
 - name: 🇳🇱 荷兰 | NLD 2
   server: 201.34.142.108
   port: 443
@@ -769,22 +761,6 @@ proxies:
   xhttp-opts:
     path: /assets/nlrelay01/
     mode: auto
-  udp: true
-- name: 🇳🇱 荷兰 | NLD 3
-  server: 79.182.39.135
-  port: 443
-  type: vless
-  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
-  tls: true
-  reality-opts:
-    public-key: zbz--PMjcIC4Ggr3j-ibDf0fzXRTj0lM_HzjPJyMkVE
-    short-id: 50a749f0eccb628c
-  servername: 15b171g.nl7.h1clayd.click
-  client-fingerprint: firefox
-  network: grpc
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: 5b79e8a94241
   udp: true
 - name: 🇹🇼 🇨🇳 台湾 | TWN 2
   server: rtifgjdr.df6h451rh.xin
@@ -5774,9 +5750,8 @@ proxy-groups:
   - 🇩🇪 德国 | DEU 3
   - 🇫🇷 法国 | FRA
   - 🇬🇧 英国 | GBR
-  - 🇮🇳 印度 | IND 2
+  - 🇭🇰 香港 | HKG 2
   - 🇳🇱 荷兰 | NLD 2
-  - 🇳🇱 荷兰 | NLD 3
   - 🇹🇼 🇨🇳 台湾 | TWN 2
   - ❓未知丨yoyapai.com (2)
   - 🇩🇪DE德国丨yoyapai.com
@@ -6421,9 +6396,8 @@ proxy-groups:
   - 🇩🇪 德国 | DEU 3
   - 🇫🇷 法国 | FRA
   - 🇬🇧 英国 | GBR
-  - 🇮🇳 印度 | IND 2
+  - 🇭🇰 香港 | HKG 2
   - 🇳🇱 荷兰 | NLD 2
-  - 🇳🇱 荷兰 | NLD 3
   - 🇹🇼 🇨🇳 台湾 | TWN 2
   - ❓未知丨yoyapai.com (2)
   - 🇩🇪DE德国丨yoyapai.com

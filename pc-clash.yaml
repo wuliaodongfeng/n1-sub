@@ -669,6 +669,17 @@ proxies:
     grpc-mode: gun
     grpc-service-name: mobile.api.Event
   udp: true
+- name: 🇷🇺 俄罗斯 | RUS 2
+  server: 85.8.201.186
+  port: 443
+  type: vless
+  uuid: 7aa77858-f235-000c-9434-7ab060848b17
+  tls: true
+  flow: xtls-rprx-vision
+  servername: cdn.mornismp.ru
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
 - name: 🇹🇼 🇨🇳 台湾 | TWN
   server: mfjh645drfj1dr6j5.df6h451rh.xin
   port: 443
@@ -5699,6 +5710,7 @@ proxy-groups:
   - 🇰🇿 哈萨克斯坦 | KAZ
   - 🇳🇱 荷兰 | NLD 2
   - 🇷🇺 俄罗斯 | RUS
+  - 🇷🇺 俄罗斯 | RUS 2
   - 🇹🇼 🇨🇳 台湾 | TWN
   - 🇹🇼 🇨🇳 台湾 | TWN 2
   - 🇺🇸 美国 | USA 2
@@ -6340,6 +6352,7 @@ proxy-groups:
   - 🇰🇿 哈萨克斯坦 | KAZ
   - 🇳🇱 荷兰 | NLD 2
   - 🇷🇺 俄罗斯 | RUS
+  - 🇷🇺 俄罗斯 | RUS 2
   - 🇹🇼 🇨🇳 台湾 | TWN
   - 🇹🇼 🇨🇳 台湾 | TWN 2
   - 🇺🇸 美国 | USA 2

@@ -569,17 +569,6 @@ proxies:
   client-fingerprint: chrome
   network: tcp
   udp: true
-- name: 🇪🇪 爱沙尼亚 | EST
-  server: 196.198.111.179
-  port: 8443
-  type: vless
-  uuid: 0173d52e-8e1b-4681-831e-11529677b72f
-  tls: true
-  flow: xtls-rprx-vision
-  servername: api-6b04608f.adhil.uk
-  client-fingerprint: firefox
-  network: tcp
-  udp: true
 - name: 🇬🇧 英国 | GBR
   server: uk-tube-01.stre4m.net
   port: 13337
@@ -631,19 +620,6 @@ proxies:
     headers:
       Host: 147-93-171-8.sslip.io
   udp: true
-- name: 🇰🇿 哈萨克斯坦 | KAZ
-  server: 196.198.111.130
-  port: 443
-  type: vless
-  uuid: 0173d52e-8e1b-4681-831e-11529677b72f
-  tls: true
-  servername: cab-6b07048f.ferrin.uk
-  client-fingerprint: firefox
-  network: xhttp
-  xhttp-opts:
-    path: /
-    mode: auto
-  udp: true
 - name: 🇳🇱 荷兰 | NLD 2
   server: 201.34.142.108
   port: 443
@@ -669,17 +645,6 @@ proxies:
     grpc-mode: gun
     grpc-service-name: mobile.api.Event
   udp: true
-- name: 🇷🇺 俄罗斯 | RUS 2
-  server: 85.8.201.186
-  port: 443
-  type: vless
-  uuid: 7aa77858-f235-000c-9434-7ab060848b17
-  tls: true
-  flow: xtls-rprx-vision
-  servername: cdn.mornismp.ru
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
 - name: 🇹🇼 🇨🇳 台湾 | TWN
   server: mfjh645drfj1dr6j5.df6h451rh.xin
   port: 443
@@ -696,47 +661,6 @@ proxies:
   udp: true
   sni: docs.microsoft.com
   skip-cert-verify: true
-- name: 🇺🇸 美国 | USA 2
-  server: 196.198.111.146
-  port: 443
-  type: vless
-  uuid: 0173d52e-8e1b-4681-831e-11529677b72f
-  tls: true
-  servername: cab-6b07048f.ferrin.uk
-  client-fingerprint: firefox
-  network: xhttp
-  xhttp-opts:
-    path: /
-    mode: auto
-  udp: true
-- name: 🇺🇸 美国 | USA 3
-  server: 23.237.202.252
-  port: 443
-  type: vless
-  uuid: 0173d52e-8e1b-4681-831e-11529677b72f
-  tls: true
-  alpn:
-  - h2
-  servername: id-0173d52e.vmagnum.win
-  client-fingerprint: chrome
-  network: xhttp
-  xhttp-opts:
-    path: /
-    mode: auto
-  udp: true
-- name: 🇺🇸 美国 | USA 6
-  server: nl.alpheratzz.org
-  port: 8443
-  type: vless
-  uuid: 0173d52e-8e1b-4681-831e-11529677b72f
-  tls: true
-  alpn:
-  - h2
-  flow: xtls-rprx-vision
-  servername: api-v2-6b07048f.vmagnum.win
-  client-fingerprint: safari
-  network: tcp
-  udp: true
 - type: ss
   name: ❓未知丨yoyapai.com (2)
   server: 47.254.128.109
@@ -5701,21 +5625,15 @@ proxy-groups:
   - 🇺🇸 美国 | USA 16
   - 🇩🇪 德国 | DEU 2
   - 🇩🇪 德国 | DEU 3
-  - 🇪🇪 爱沙尼亚 | EST
   - 🇬🇧 英国 | GBR
   - 🇬🇧 英国 | GBR 2
   - 🇭🇰 香港 | HKG 2
   - 🇭🇰 香港 | HKG 3
   - 🇮🇳 印度 | IND 2
-  - 🇰🇿 哈萨克斯坦 | KAZ
   - 🇳🇱 荷兰 | NLD 2
   - 🇷🇺 俄罗斯 | RUS
-  - 🇷🇺 俄罗斯 | RUS 2
   - 🇹🇼 🇨🇳 台湾 | TWN
   - 🇹🇼 🇨🇳 台湾 | TWN 2
-  - 🇺🇸 美国 | USA 2
-  - 🇺🇸 美国 | USA 3
-  - 🇺🇸 美国 | USA 6
   - ❓未知丨yoyapai.com (2)
   - 🇩🇪DE德国丨yoyapai.com
   - ❓未知丨yoyapai.com (5)
@@ -6343,21 +6261,15 @@ proxy-groups:
   - 🇺🇸 美国 | USA 16
   - 🇩🇪 德国 | DEU 2
   - 🇩🇪 德国 | DEU 3
-  - 🇪🇪 爱沙尼亚 | EST
   - 🇬🇧 英国 | GBR
   - 🇬🇧 英国 | GBR 2
   - 🇭🇰 香港 | HKG 2
   - 🇭🇰 香港 | HKG 3
   - 🇮🇳 印度 | IND 2
-  - 🇰🇿 哈萨克斯坦 | KAZ
   - 🇳🇱 荷兰 | NLD 2
   - 🇷🇺 俄罗斯 | RUS
-  - 🇷🇺 俄罗斯 | RUS 2
   - 🇹🇼 🇨🇳 台湾 | TWN
   - 🇹🇼 🇨🇳 台湾 | TWN 2
-  - 🇺🇸 美国 | USA 2
-  - 🇺🇸 美国 | USA 3
-  - 🇺🇸 美国 | USA 6
   - ❓未知丨yoyapai.com (2)
   - 🇩🇪DE德国丨yoyapai.com
   - ❓未知丨yoyapai.com (5)

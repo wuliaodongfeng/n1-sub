@@ -533,18 +533,12 @@ proxies:
   grpc-opts:
     grpc-mode: gun
     grpc-service-name: 99f2107b03f8
-- name: 🇩🇪 德国 | DEU 5
-  server: 144.31.75.168
+- name: 🇩🇪 德国 | DEU 2
+  server: 47.254.167.157
   port: 443
-  type: vless
-  uuid: b0fd9db4-24b8-45d0-88e1-c709c97646e6
-  tls: true
-  reality-opts:
-    public-key: _OxeyvQDpHcak4ou_pmWb5GmhWcG1j7A8LOIqYXghxg
-    short-id: 2177a83232995047
-  servername: www.fortum.com
-  client-fingerprint: edge
-  network: tcp
+  type: ss
+  cipher: 2022-blake3-chacha20-poly1305
+  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
   udp: true
 - name: 🇩🇪 德国 | DEU 6
   server: bookend.filnex.baby
@@ -602,6 +596,14 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
+- name: 🇭🇰 香港 | HKG 4
+  server: dddz-1-x.473221.xyz
+  port: 43120
+  type: anytls
+  password: 5807f1c4-b50e-4ec0-8d01-274045da0da5
+  udp: true
+  sni: v1-dy.ixigua.com
+  skip-cert-verify: true
 - name: 🇭🇰 香港 | HKG 5
   server: ibsdsf.df6h451rh.xin
   port: 443
@@ -610,6 +612,20 @@ proxies:
   udp: true
   sni: docs.microsoft.com
   skip-cert-verify: true
+- name: 🇮🇹 意大利 | ITA
+  server: 202.50.253.63
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: 🇮🇹 意大利 | ITA 3
+  server: 202.50.253.81
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
 - name: 🇮🇹 意大利 | ITA 4
   server: 202.50.253.54
   port: 19999
@@ -617,20 +633,12 @@ proxies:
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
-- name: 🇳🇱 荷兰 | NLD 2
-  server: 98.98.132.110
-  port: 443
-  type: vless
-  uuid: e2f43a75-e683-4d09-96e8-3ad1f2e57100
-  tls: true
-  alpn:
-  - h2
-  servername: a1116.afl7t8f.com
-  client-fingerprint: chrome
-  network: grpc
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: 2e7d5cf6a7e50c564bfddf62c87e02e1
+- name: 🇮🇹 意大利 | ITA 5
+  server: 202.50.253.45
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
 - name: 🇷🇺 俄罗斯 | RUS
   server: 201.51.12.98
@@ -673,21 +681,6 @@ proxies:
     grpc-mode: gun
     grpc-service-name: mobile.api.Event
   udp: true
-- name: 🇺🇸 美国 | USA 7
-  server: 153.56.230.6
-  port: 443
-  type: vless
-  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
-  tls: true
-  reality-opts:
-    public-key: cO3wYHISTeorXcM8ffaDCDdqZ-olBQL-GyZqb-W7rTk
-    short-id: bd8f712209a9c283
-  servername: 0592efg.us8.h1clayd.click
-  client-fingerprint: edge
-  network: grpc
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: 99f2107b03f8
 - name: 🇺🇸 美国 | USA 17
   server: xray-b8ct4r2f-sahdon-hosaindoost.cloady.io
   port: 443
@@ -4629,18 +4622,20 @@ proxy-groups:
   - 🇳🇱 荷兰 | NLD 4
   - 🇷🇺 俄罗斯 | RUS 3
   - 🇺🇸 美国 | USA 16
-  - 🇩🇪 德国 | DEU 5
+  - 🇩🇪 德国 | DEU 2
   - 🇩🇪 德国 | DEU 6
   - 🇪🇸 西班牙 | ESP 2
   - 🇬🇧 英国 | GBR
   - 🇬🇧 英国 | GBR 2
+  - 🇭🇰 香港 | HKG 4
   - 🇭🇰 香港 | HKG 5
+  - 🇮🇹 意大利 | ITA
+  - 🇮🇹 意大利 | ITA 3
   - 🇮🇹 意大利 | ITA 4
-  - 🇳🇱 荷兰 | NLD 2
+  - 🇮🇹 意大利 | ITA 5
   - 🇷🇺 俄罗斯 | RUS
   - 🇷🇺 俄罗斯 | RUS 2
   - 🇷🇺 俄罗斯 | RUS 4
-  - 🇺🇸 美国 | USA 7
   - 🇺🇸 美国 | USA 17
   - ❓未知丨yoyapai.com (2)
   - 🇮🇹IT意大利丨yoyapai.com
@@ -5134,18 +5129,20 @@ proxy-groups:
   - 🇳🇱 荷兰 | NLD 4
   - 🇷🇺 俄罗斯 | RUS 3
   - 🇺🇸 美国 | USA 16
-  - 🇩🇪 德国 | DEU 5
+  - 🇩🇪 德国 | DEU 2
   - 🇩🇪 德国 | DEU 6
   - 🇪🇸 西班牙 | ESP 2
   - 🇬🇧 英国 | GBR
   - 🇬🇧 英国 | GBR 2
+  - 🇭🇰 香港 | HKG 4
   - 🇭🇰 香港 | HKG 5
+  - 🇮🇹 意大利 | ITA
+  - 🇮🇹 意大利 | ITA 3
   - 🇮🇹 意大利 | ITA 4
-  - 🇳🇱 荷兰 | NLD 2
+  - 🇮🇹 意大利 | ITA 5
   - 🇷🇺 俄罗斯 | RUS
   - 🇷🇺 俄罗斯 | RUS 2
   - 🇷🇺 俄罗斯 | RUS 4
-  - 🇺🇸 美国 | USA 7
   - 🇺🇸 美国 | USA 17
   - ❓未知丨yoyapai.com (2)
   - 🇮🇹IT意大利丨yoyapai.com

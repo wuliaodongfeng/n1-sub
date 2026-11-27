@@ -559,6 +559,16 @@ proxies:
     host: sunfield.moltex.click
     mode: auto
   udp: true
+- name: 🇩🇪 德国 | DEU 3
+  server: ns2.irts.lol
+  port: 443
+  type: vless
+  uuid: ff1906a5-a446-44e4-8e72-4e2d61775fa0
+  tls: true
+  servername: ns2.irts.lol
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
 - name: 🇪🇪 爱沙尼亚 | EST
   server: 196.198.111.179
   port: 8443
@@ -5679,6 +5689,7 @@ proxy-groups:
   - 🇷🇺 俄罗斯 | RUS 3
   - 🇺🇸 美国 | USA 16
   - 🇩🇪 德国 | DEU 2
+  - 🇩🇪 德国 | DEU 3
   - 🇪🇪 爱沙尼亚 | EST
   - 🇬🇧 英国 | GBR
   - 🇬🇧 英国 | GBR 2
@@ -6319,6 +6330,7 @@ proxy-groups:
   - 🇷🇺 俄罗斯 | RUS 3
   - 🇺🇸 美国 | USA 16
   - 🇩🇪 德国 | DEU 2
+  - 🇩🇪 德国 | DEU 3
   - 🇪🇪 爱沙尼亚 | EST
   - 🇬🇧 英国 | GBR
   - 🇬🇧 英国 | GBR 2

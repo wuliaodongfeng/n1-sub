@@ -556,20 +556,6 @@ proxies:
     headers:
       Host: bookend.filnex.baby
   udp: true
-- name: 🇪🇸 西班牙 | ESP 2
-  server: 196.196.149.80
-  port: 443
-  type: vless
-  uuid: 4201786b-d99b-4147-a5f0-20d47acddb81
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE
-    short-id: 42426c882c5fcd41
-  servername: 7aa271t.es1.h1clayd.click
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
 - name: 🇬🇧 英国 | GBR
   server: 216.86.70.132
   port: 443
@@ -612,8 +598,22 @@ proxies:
   udp: true
   sni: docs.microsoft.com
   skip-cert-verify: true
-- name: 🇮🇹 意大利 | ITA
-  server: 202.50.253.63
+- name: 🇮🇱 以色列 | ISR
+  server: 196.196.148.177
+  port: 443
+  type: vless
+  uuid: 4201786b-d99b-4147-a5f0-20d47acddb81
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: MzgB17ZFbKqs8pbC3EscTzHid_ENc-k_Cp6nXl-2knw
+    short-id: 6976d670818644cc
+  servername: 4935e4t.de25.h1clayd.click
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 🇮🇹 意大利 | ITA 2
+  server: 202.50.253.27
   port: 19999
   type: ss
   cipher: aes-256-gcm
@@ -653,21 +653,6 @@ proxies:
     grpc-mode: gun
     grpc-service-name: mobile.api.Event
   udp: true
-- name: 🇷🇺 俄罗斯 | RUS 2
-  server: leviko-ru0640.shopingggg.ir
-  port: 443
-  type: vless
-  uuid: 38308ff1-5aa9-494f-a25a-0f2870d56b3e
-  tls: true
-  alpn:
-  - h2
-  servername: vps3.nemnogogo.com
-  client-fingerprint: firefox
-  network: grpc
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: mobile.api.Event
-  udp: true
 - name: 🇷🇺 俄罗斯 | RUS 4
   server: 201.24.116.192
   port: 443
@@ -680,20 +665,6 @@ proxies:
   grpc-opts:
     grpc-mode: gun
     grpc-service-name: mobile.api.Event
-  udp: true
-- name: 🇺🇸 美国 | USA 17
-  server: xray-b8ct4r2f-sahdon-hosaindoost.cloady.io
-  port: 443
-  type: vless
-  uuid: 1fd2e2d1-96f5-2056-19fd-b375b1a9d851
-  tls: true
-  servername: xray-b8ct4r2f-sahdon-hosaindoost.cloady.io
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /ffad70ffdfc3bcda
-    headers:
-      Host: xray-b8ct4r2f-sahdon-hosaindoost.cloady.io
   udp: true
 - type: ss
   name: ❓未知丨yoyapai.com (2)
@@ -4624,19 +4595,17 @@ proxy-groups:
   - 🇺🇸 美国 | USA 16
   - 🇩🇪 德国 | DEU 2
   - 🇩🇪 德国 | DEU 6
-  - 🇪🇸 西班牙 | ESP 2
   - 🇬🇧 英国 | GBR
   - 🇬🇧 英国 | GBR 2
   - 🇭🇰 香港 | HKG 4
   - 🇭🇰 香港 | HKG 5
-  - 🇮🇹 意大利 | ITA
+  - 🇮🇱 以色列 | ISR
+  - 🇮🇹 意大利 | ITA 2
   - 🇮🇹 意大利 | ITA 3
   - 🇮🇹 意大利 | ITA 4
   - 🇮🇹 意大利 | ITA 5
   - 🇷🇺 俄罗斯 | RUS
-  - 🇷🇺 俄罗斯 | RUS 2
   - 🇷🇺 俄罗斯 | RUS 4
-  - 🇺🇸 美国 | USA 17
   - ❓未知丨yoyapai.com (2)
   - 🇮🇹IT意大利丨yoyapai.com
   - ❓未知丨yoyapai.com (3)
@@ -5131,19 +5100,17 @@ proxy-groups:
   - 🇺🇸 美国 | USA 16
   - 🇩🇪 德国 | DEU 2
   - 🇩🇪 德国 | DEU 6
-  - 🇪🇸 西班牙 | ESP 2
   - 🇬🇧 英国 | GBR
   - 🇬🇧 英国 | GBR 2
   - 🇭🇰 香港 | HKG 4
   - 🇭🇰 香港 | HKG 5
-  - 🇮🇹 意大利 | ITA
+  - 🇮🇱 以色列 | ISR
+  - 🇮🇹 意大利 | ITA 2
   - 🇮🇹 意大利 | ITA 3
   - 🇮🇹 意大利 | ITA 4
   - 🇮🇹 意大利 | ITA 5
   - 🇷🇺 俄罗斯 | RUS
-  - 🇷🇺 俄罗斯 | RUS 2
   - 🇷🇺 俄罗斯 | RUS 4
-  - 🇺🇸 美国 | USA 17
   - ❓未知丨yoyapai.com (2)
   - 🇮🇹IT意大利丨yoyapai.com
   - ❓未知丨yoyapai.com (3)

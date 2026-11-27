@@ -718,20 +718,6 @@ proxies:
   client-fingerprint: chrome
   network: tcp
   udp: true
-- name: 🇫🇷 法国 | FRA
-  server: 13.141.36.43
-  port: 443
-  type: vless
-  uuid: e894c08a-fecc-46f5-bf03-c95d0274c79d
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: p35RUaaaItuoyNiCrLpGeStBUpEJMSiZ2AajdfhhmiM
-    short-id: 92aee92130b46fe2
-  servername: 6bf329t.nl18.h1clayd.click
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
 - name: 🇬🇧 英国 | GBR
   server: uk-tube-01.stre4m.net
   port: 13337
@@ -5780,7 +5766,6 @@ proxy-groups:
   - 🇩🇪 德国 | DEU
   - 🇩🇪 德国 | DEU 2
   - 🇩🇪 德国 | DEU 3
-  - 🇫🇷 法国 | FRA
   - 🇬🇧 英国 | GBR
   - 🇭🇰 香港 | HKG 2
   - 🇮🇳 印度 | IND 2
@@ -6428,7 +6413,6 @@ proxy-groups:
   - 🇩🇪 德国 | DEU
   - 🇩🇪 德国 | DEU 2
   - 🇩🇪 德国 | DEU 3
-  - 🇫🇷 法国 | FRA
   - 🇬🇧 英国 | GBR
   - 🇭🇰 香港 | HKG 2
   - 🇮🇳 印度 | IND 2

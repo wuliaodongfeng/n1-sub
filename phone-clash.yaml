@@ -603,29 +603,26 @@ proxies:
   udp: true
   sni: docs.microsoft.com
   skip-cert-verify: true
+- name: 🇮🇹 意大利 | ITA 2
+  server: 202.50.253.90
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: 🇮🇹 意大利 | ITA 4
+  server: 202.50.253.54
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
 - name: 🇮🇹 意大利 | ITA 5
   server: 202.50.253.27
   port: 19999
   type: ss
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇮🇹 意大利 | ITA 8
-  server: 202.50.253.45
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇯🇵 日本 | JPN 2
-  server: 50.7.159.242
-  port: 443
-  type: vless
-  uuid: 8840fac2-5361-4cb6-b887-cd1b95092394
-  tls: true
-  servername: jp.reddotcorp.org
-  client-fingerprint: firefox
-  network: tcp
   udp: true
 - name: 🇱🇮 LI_03
   server: nemazu.grandserver8.ir
@@ -657,21 +654,6 @@ proxies:
   servername: api-v1-6b07048f.vmagnum.win
   client-fingerprint: firefox
   network: tcp
-  udp: true
-- name: 🇳🇱 荷兰 | NLD 3
-  server: 98.98.132.110
-  port: 443
-  type: vless
-  uuid: e2f43a75-e683-4d09-96e8-3ad1f2e57100
-  tls: true
-  alpn:
-  - h2
-  servername: a1116.afl7t8f.com
-  client-fingerprint: chrome
-  network: grpc
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: 2e7d5cf6a7e50c564bfddf62c87e02e1
   udp: true
 - name: 🇷🇴 罗马尼亚 | ROU
   server: 193.168.140.228
@@ -721,17 +703,6 @@ proxies:
   udp: true
   sni: turn.gosthk.site
   skip-cert-verify: true
-- name: 🇺🇸 美国 | USA
-  server: ssr2.762988.xyz
-  port: 33336
-  type: ssr
-  cipher: chacha20-ietf
-  password: dongtaiwang.com
-  protocol: auth_chain_a
-  obfs: tls1.2_ticket_auth
-  protocolparam: ''
-  obfsparam: ''
-  udp: true
 - name: 🇺🇸 美国 | USA 2
   server: 23.237.202.252
   port: 443
@@ -746,48 +717,6 @@ proxies:
   xhttp-opts:
     path: /
     mode: auto
-  udp: true
-- name: 🇺🇸 美国 | USA 3
-  server: wryly-messiest.video-streams.org
-  port: 443
-  type: vless
-  uuid: 0ca80064-0265-44ec-aaec-a8f7d799f293
-  tls: true
-  servername: wryly-messiest.video-streams.org
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: wryly-messiest.video-streams.org
-  udp: true
-- name: 🇺🇸 美国 | USA 6
-  server: 3.219.184.102
-  port: 443
-  type: vless
-  uuid: a5b1d16b-719b-4bd6-9d7b-fe6d84607da9
-  tls: true
-  alpn:
-  - h2
-  servername: fortuna.masynbazar.ru
-  client-fingerprint: chrome
-  network: xhttp
-  xhttp-opts:
-    path: /
-  udp: true
-- name: 🇺🇸 美国 | USA 7
-  server: cos-cdn-g.alicdn.win
-  port: 443
-  type: vless
-  uuid: 3bb77d95-fc42-4fa5-9865-1a42dd4d9ff6
-  tls: true
-  servername: mms-statlc-ig7dmg-e.oppocc.men
-  client-fingerprint: safari
-  network: ws
-  ws-opts:
-    path: /newlogin/login.do
-    headers:
-      Host: mms-static-origin-e.oppocc.men
   udp: true
 - type: ss
   name: ❓未知丨yoyapai.com (2)
@@ -5757,22 +5686,17 @@ proxy-groups:
   - 🇬🇧 英国 | GBR 3
   - 🇭🇰 香港 | HKG
   - 🇭🇰 香港 | HKG 3
+  - 🇮🇹 意大利 | ITA 2
+  - 🇮🇹 意大利 | ITA 4
   - 🇮🇹 意大利 | ITA 5
-  - 🇮🇹 意大利 | ITA 8
-  - 🇯🇵 日本 | JPN 2
   - 🇱🇮 LI_03
   - 🇲🇾 马来西亚 | MYS
   - 🇳🇱 荷兰 | NLD 2
-  - 🇳🇱 荷兰 | NLD 3
   - 🇷🇴 罗马尼亚 | ROU
   - 🇷🇺 俄罗斯 | RUS
   - 🇹🇼 🇨🇳 台湾 | TWN
   - 🇹🇼 🇨🇳 台湾 | TWN 2
-  - 🇺🇸 美国 | USA
   - 🇺🇸 美国 | USA 2
-  - 🇺🇸 美国 | USA 3
-  - 🇺🇸 美国 | USA 6
-  - 🇺🇸 美国 | USA 7
   - ❓未知丨yoyapai.com (2)
   - 🇩🇪DE德国丨yoyapai.com
   - ❓未知丨yoyapai.com (5)
@@ -6404,22 +6328,17 @@ proxy-groups:
   - 🇬🇧 英国 | GBR 3
   - 🇭🇰 香港 | HKG
   - 🇭🇰 香港 | HKG 3
+  - 🇮🇹 意大利 | ITA 2
+  - 🇮🇹 意大利 | ITA 4
   - 🇮🇹 意大利 | ITA 5
-  - 🇮🇹 意大利 | ITA 8
-  - 🇯🇵 日本 | JPN 2
   - 🇱🇮 LI_03
   - 🇲🇾 马来西亚 | MYS
   - 🇳🇱 荷兰 | NLD 2
-  - 🇳🇱 荷兰 | NLD 3
   - 🇷🇴 罗马尼亚 | ROU
   - 🇷🇺 俄罗斯 | RUS
   - 🇹🇼 🇨🇳 台湾 | TWN
   - 🇹🇼 🇨🇳 台湾 | TWN 2
-  - 🇺🇸 美国 | USA
   - 🇺🇸 美国 | USA 2
-  - 🇺🇸 美国 | USA 3
-  - 🇺🇸 美国 | USA 6
-  - 🇺🇸 美国 | USA 7
   - ❓未知丨yoyapai.com (2)
   - 🇩🇪DE德国丨yoyapai.com
   - ❓未知丨yoyapai.com (5)

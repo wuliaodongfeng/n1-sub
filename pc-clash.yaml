@@ -542,6 +542,33 @@ proxies:
   grpc-opts:
     grpc-mode: gun
     grpc-service-name: 99f2107b03f8
+- name: 🇩🇪 德国 | DEU 2
+  server: sunfield.moltex.click
+  port: 443
+  type: vless
+  uuid: 749b1c56-e658-4bf5-94bd-5c3286a4aed1
+  tls: true
+  alpn:
+  - h2
+  - http/1.1
+  servername: fennel.moltex.click
+  client-fingerprint: firefox
+  network: xhttp
+  xhttp-opts:
+    path: /api/de1/sync
+    host: sunfield.moltex.click
+    mode: auto
+  udp: true
+- name: 🇩🇪 德国 | DEU 3
+  server: ns2.irts.lol
+  port: 443
+  type: vless
+  uuid: ff1906a5-a446-44e4-8e72-4e2d61775fa0
+  tls: true
+  servername: ns2.irts.lol
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
 - name: 🇪🇪 爱沙尼亚 | EST
   server: 196.198.111.179
   port: 8443
@@ -551,20 +578,6 @@ proxies:
   flow: xtls-rprx-vision
   servername: api-6b04608f.adhil.uk
   client-fingerprint: firefox
-  network: tcp
-  udp: true
-- name: 🇫🇷 法国 | FRA
-  server: 13.141.36.43
-  port: 443
-  type: vless
-  uuid: e894c08a-fecc-46f5-bf03-c95d0274c79d
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: p35RUaaaItuoyNiCrLpGeStBUpEJMSiZ2AajdfhhmiM
-    short-id: 92aee92130b46fe2
-  servername: 6bf329t.nl18.h1clayd.click
-  client-fingerprint: chrome
   network: tcp
   udp: true
 - name: 🇬🇧 英国 | GBR
@@ -618,6 +631,20 @@ proxies:
     headers:
       Host: 147-93-171-8.sslip.io
   udp: true
+- name: 🇮🇹 意大利 | ITA
+  server: www.visa.com.hk
+  port: 443
+  type: vless
+  uuid: 937bc631-4022-41d2-ae15-d8247ba5e32d
+  tls: true
+  servername: it-mil.862400.xyz
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /announcement?ed=2048
+    headers:
+      Host: it-mil.862400.xyz
+  udp: true
 - name: 🇰🇿 哈萨克斯坦 | KAZ
   server: 196.198.111.130
   port: 443
@@ -650,19 +677,14 @@ proxies:
     path: /assets/nlrelay01/
     mode: auto
   udp: true
-- name: 🇷🇺 俄罗斯 | RUS
-  server: 201.51.12.98
+- name: 🇹🇼 🇨🇳 台湾 | TWN
+  server: mfjh645drfj1dr6j5.df6h451rh.xin
   port: 443
-  type: vless
-  uuid: 38308ff1-5aa9-494f-a25a-0f2870d56b3e
-  tls: true
-  servername: vps3.nemnogogo.com
-  client-fingerprint: firefox
-  network: grpc
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: mobile.api.Event
+  type: anytls
+  password: 0324fbc29561
   udp: true
+  sni: px.ads.linkedin.com
+  skip-cert-verify: true
 - name: 🇹🇼 🇨🇳 台湾 | TWN 2
   server: rtifgjdr.df6h451rh.xin
   port: 443
@@ -671,6 +693,19 @@ proxies:
   udp: true
   sni: docs.microsoft.com
   skip-cert-verify: true
+- name: 🇺🇸 美国 | USA 2
+  server: 196.198.111.146
+  port: 443
+  type: vless
+  uuid: 0173d52e-8e1b-4681-831e-11529677b72f
+  tls: true
+  servername: cab-6b07048f.ferrin.uk
+  client-fingerprint: firefox
+  network: xhttp
+  xhttp-opts:
+    path: /
+    mode: auto
+  udp: true
 - type: ss
   name: ❓未知丨yoyapai.com (2)
   server: 47.254.128.109
@@ -5633,18 +5668,21 @@ proxy-groups:
   - 🇳🇱 荷兰 | NLD 4
   - 🇷🇺 俄罗斯 | RUS 3
   - 🇺🇸 美国 | USA 16
+  - 🇩🇪 德国 | DEU 2
+  - 🇩🇪 德国 | DEU 3
   - 🇪🇪 爱沙尼亚 | EST
-  - 🇫🇷 法国 | FRA
   - 🇬🇧 英国 | GBR
   - 🇬🇧 英国 | GBR 2
   - 🇭🇰 香港 | HKG 2
   - 🇭🇰 香港 | HKG 3
   - 🇮🇳 印度 | IND 2
+  - 🇮🇹 意大利 | ITA
   - 🇰🇿 哈萨克斯坦 | KAZ
   - 🇱🇻 拉脱维亚 | LVA
   - 🇳🇱 荷兰 | NLD 2
-  - 🇷🇺 俄罗斯 | RUS
+  - 🇹🇼 🇨🇳 台湾 | TWN
   - 🇹🇼 🇨🇳 台湾 | TWN 2
+  - 🇺🇸 美国 | USA 2
   - ❓未知丨yoyapai.com (2)
   - 🇩🇪DE德国丨yoyapai.com
   - ❓未知丨yoyapai.com (5)
@@ -6270,18 +6308,21 @@ proxy-groups:
   - 🇳🇱 荷兰 | NLD 4
   - 🇷🇺 俄罗斯 | RUS 3
   - 🇺🇸 美国 | USA 16
+  - 🇩🇪 德国 | DEU 2
+  - 🇩🇪 德国 | DEU 3
   - 🇪🇪 爱沙尼亚 | EST
-  - 🇫🇷 法国 | FRA
   - 🇬🇧 英国 | GBR
   - 🇬🇧 英国 | GBR 2
   - 🇭🇰 香港 | HKG 2
   - 🇭🇰 香港 | HKG 3
   - 🇮🇳 印度 | IND 2
+  - 🇮🇹 意大利 | ITA
   - 🇰🇿 哈萨克斯坦 | KAZ
   - 🇱🇻 拉脱维亚 | LVA
   - 🇳🇱 荷兰 | NLD 2
-  - 🇷🇺 俄罗斯 | RUS
+  - 🇹🇼 🇨🇳 台湾 | TWN
   - 🇹🇼 🇨🇳 台湾 | TWN 2
+  - 🇺🇸 美国 | USA 2
   - ❓未知丨yoyapai.com (2)
   - 🇩🇪DE德国丨yoyapai.com
   - ❓未知丨yoyapai.com (5)

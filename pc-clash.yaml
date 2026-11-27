@@ -565,20 +565,6 @@ proxies:
     headers:
       Host: bookend.filnex.baby
   udp: true
-- name: 🇪🇸 西班牙 | ESP 2
-  server: 196.196.149.80
-  port: 443
-  type: vless
-  uuid: 4201786b-d99b-4147-a5f0-20d47acddb81
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE
-    short-id: 42426c882c5fcd41
-  servername: 7aa271t.es1.h1clayd.click
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
 - name: 🇬🇧 英国 | GBR 2
   server: uk-tube-01.stre4m.net
   port: 13337
@@ -589,6 +575,14 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
+- name: 🇭🇰 香港 | HKG 4
+  server: dddz-1-x.473221.xyz
+  port: 43120
+  type: anytls
+  password: 5807f1c4-b50e-4ec0-8d01-274045da0da5
+  udp: true
+  sni: v1-dy.ixigua.com
+  skip-cert-verify: true
 - name: 🇭🇰 香港 | HKG 5
   server: ibsdsf.df6h451rh.xin
   port: 443
@@ -597,42 +591,6 @@ proxies:
   udp: true
   sni: docs.microsoft.com
   skip-cert-verify: true
-- name: 🇮🇹 意大利 | ITA
-  server: 202.50.253.63
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇮🇹 意大利 | ITA 4
-  server: 202.50.253.54
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇮🇹 意大利 | ITA 6
-  server: 202.50.253.36
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇳🇱 荷兰 | NLD 2
-  server: 98.98.132.110
-  port: 443
-  type: vless
-  uuid: e2f43a75-e683-4d09-96e8-3ad1f2e57100
-  tls: true
-  alpn:
-  - h2
-  servername: a1116.afl7t8f.com
-  client-fingerprint: chrome
-  network: grpc
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: 2e7d5cf6a7e50c564bfddf62c87e02e1
-  udp: true
 - name: 🇷🇺 俄罗斯 | RUS
   server: 201.51.12.98
   port: 443
@@ -5638,13 +5596,9 @@ proxy-groups:
   - 🇺🇸 美国 | USA 16
   - 🇩🇪 德国 | DEU 2
   - 🇩🇪 德国 | DEU 6
-  - 🇪🇸 西班牙 | ESP 2
   - 🇬🇧 英国 | GBR 2
+  - 🇭🇰 香港 | HKG 4
   - 🇭🇰 香港 | HKG 5
-  - 🇮🇹 意大利 | ITA
-  - 🇮🇹 意大利 | ITA 4
-  - 🇮🇹 意大利 | ITA 6
-  - 🇳🇱 荷兰 | NLD 2
   - 🇷🇺 俄罗斯 | RUS
   - 🇷🇺 俄罗斯 | RUS 2
   - 🇷🇺 俄罗斯 | RUS 4
@@ -6275,13 +6229,9 @@ proxy-groups:
   - 🇺🇸 美国 | USA 16
   - 🇩🇪 德国 | DEU 2
   - 🇩🇪 德国 | DEU 6
-  - 🇪🇸 西班牙 | ESP 2
   - 🇬🇧 英国 | GBR 2
+  - 🇭🇰 香港 | HKG 4
   - 🇭🇰 香港 | HKG 5
-  - 🇮🇹 意大利 | ITA
-  - 🇮🇹 意大利 | ITA 4
-  - 🇮🇹 意大利 | ITA 6
-  - 🇳🇱 荷兰 | NLD 2
   - 🇷🇺 俄罗斯 | RUS
   - 🇷🇺 俄罗斯 | RUS 2
   - 🇷🇺 俄罗斯 | RUS 4

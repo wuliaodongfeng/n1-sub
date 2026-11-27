@@ -708,6 +708,16 @@ proxies:
     host: sunfield.moltex.click
     mode: auto
   udp: true
+- name: 🇩🇪 德国 | DEU 3
+  server: ns2.irts.lol
+  port: 443
+  type: vless
+  uuid: ff1906a5-a446-44e4-8e72-4e2d61775fa0
+  tls: true
+  servername: ns2.irts.lol
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
 - name: 🇫🇷 法国 | FRA
   server: 13.141.36.43
   port: 443
@@ -722,6 +732,16 @@ proxies:
   client-fingerprint: chrome
   network: tcp
   udp: true
+- name: 🇬🇧 英国 | GBR
+  server: uk-tube-01.stre4m.net
+  port: 13337
+  type: hysteria2
+  password: 900c8c92-1979-4c7c-8f2f-63e87d53d8fe
+  auth: 900c8c92-1979-4c7c-8f2f-63e87d53d8fe
+  sni: mother-earth.fyi
+  skip-cert-verify: true
+  alpn:
+  - h3
 - name: 🇭🇰 香港 | HKG 2
   server: ibsdsf.df6h451rh.xin
   port: 443
@@ -5759,7 +5779,9 @@ proxy-groups:
   - 🇺🇸 美国 | USA 6
   - 🇩🇪 德国 | DEU
   - 🇩🇪 德国 | DEU 2
+  - 🇩🇪 德国 | DEU 3
   - 🇫🇷 法国 | FRA
+  - 🇬🇧 英国 | GBR
   - 🇭🇰 香港 | HKG 2
   - 🇮🇳 印度 | IND 2
   - 🇳🇱 荷兰 | NLD 2
@@ -6405,7 +6427,9 @@ proxy-groups:
   - 🇺🇸 美国 | USA 6
   - 🇩🇪 德国 | DEU
   - 🇩🇪 德国 | DEU 2
+  - 🇩🇪 德国 | DEU 3
   - 🇫🇷 法国 | FRA
+  - 🇬🇧 英国 | GBR
   - 🇭🇰 香港 | HKG 2
   - 🇮🇳 印度 | IND 2
   - 🇳🇱 荷兰 | NLD 2
